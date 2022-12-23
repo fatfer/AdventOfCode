@@ -1,8 +1,7 @@
-namespace AdventOfCode
+namespace AdventOfCode;
+
+public interface IResolvable
 {
-    public interface IResolvable
-    {
-        public string SolvePartOne();
-        public string SolvePartTwo();
-    }
+    public string SolvePartOne();
+    public string SolvePartTwo();
 }

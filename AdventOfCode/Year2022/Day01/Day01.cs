@@ -1,31 +1,30 @@
-namespace AdventOfCode.Year2022
+namespace AdventOfCode.Year2022;
+
+public class Day01 : IResolvable
 {
-    public class Day01 : IResolvable
+    private readonly List<int> _elfs = new();
+    private readonly string[] _file = File.ReadAllLines("./Year2022/Day01/input.txt");
+    private int _calories = 0;
+    public string SolvePartOne()
     {
-        private readonly List<int> _elfs = new();
-        private readonly string[] _file = File.ReadAllLines("./Year2022/Day01/input.txt");
-        private int _calories = 0;
-        public string SolvePartOne()
+        foreach (var line in _file)
         {
-            foreach (var line in _file)
+            if (string.IsNullOrEmpty(line))
             {
-                if (string.IsNullOrEmpty(line))
-                {
-                    _elfs.Add(_calories);
-                    _calories = 0;
-                }
-                else
-                {
-                    _calories += int.Parse(line);
-                }
+                _elfs.Add(_calories);
+                _calories = 0;
             }
-            var maxCalories = _elfs.Max();
-            return maxCalories.ToString();
+            else
+            {
+                _calories += int.Parse(line);
+            }
         }
-        public string SolvePartTwo()
-        {
-            _elfs.Sort();
-            return _elfs.TakeLast(3).Sum().ToString();
-        }
+        var maxCalories = _elfs.Max();
+        return maxCalories.ToString();
+    }
+    public string SolvePartTwo()
+    {
+        _elfs.Sort();
+        return _elfs.TakeLast(3).Sum().ToString();
     }
 }
