@@ -1,7 +1,5 @@
 ﻿using System.Reflection;
-
 using AdventOfCode;
-
 using Spectre.Console;
 
 var table = new Table();
