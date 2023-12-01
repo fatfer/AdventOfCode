@@ -5,7 +5,7 @@ namespace AdventOfCode.Year2023;
 public class Day01 : IResolvable
 {
     private readonly string[] _file = File.ReadAllLines("./Year2023/Day01/input.txt");
-    readonly Dictionary<string, int> _digitMapper = new Dictionary<string, int>
+    private readonly Dictionary<string, int> _digitMapper = new Dictionary<string, int>
         {
             { "one", 1 },
             { "two", 2 },
@@ -17,7 +17,7 @@ public class Day01 : IResolvable
             { "eight", 8 },
             { "nine", 9 }
         };
-        
+
     public string SolvePartOne()
     {
         return Solve(@"\d");
